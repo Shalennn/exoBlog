@@ -28,7 +28,8 @@ class AppFixtures extends Fixture
         $tableauCategory = [];
         $tableauArticle = [];
 
-        $faker = Faker\Factory::create();
+        $faker = Faker\Factory::create('fr_FR');
+        //user
         for ($i=0; $i < 25; $i++) { 
             $user = new User();
             $user
@@ -38,17 +39,22 @@ class AppFixtures extends Fixture
             ->setPassword($this->hasher->hashPassword($user,'1234'))
             ->setAvatar($faker->imageUrl(640,480, 'cats', true))
             ->setRoles(['ROLE_USER']);
+
             $manager->persist($user);
+
             $tableauUser[]=$user;
         }
 
         //Category
         for ($i = 0; $i < 30; $i++) { 
             $category = new Category();
-            $category->setLibele($faker->word());
+            $category->setLibele($faker->jobTitle());
+
             $manager->persist($category);
+
             $tableauCategory[] = $category;
         }
+
         //Article
         for ($i = 0; $i < 100; $i++) { 
             $article = new Article();
@@ -57,6 +63,7 @@ class AppFixtures extends Fixture
                 ->setTitle($faker->word())
                 ->setContent($faker->paragraphs(3, true))
                 ->setCreateAt($createAt)
+                // ->setCreateAt(new \DateTimeImmutable($faker-date() . $faker->time()))
                 ->setUser($faker->randomElement($tableauUser));
 
             $randomCategory = $faker->randomElements($tableauCategory, 3);
@@ -65,6 +72,7 @@ class AppFixtures extends Fixture
             }
 
             $manager->persist($article);
+
             $tableauArticle[] = $article;
         }
         //Commenaite
