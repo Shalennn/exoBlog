@@ -1,5 +1,16 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute
+  resource:
+    path: ../src/Controller/
+    namespace: App\Controller
+  type: attribute
+HelloControllerBonjour:
+  path: /bonjour
+  controller: App/Controller/HomeController::bonjour2
+#Tableau routage exo affichage
+app_affichage:
+  path: /affichage/{nom}
+  controller: App\Controller\AccueilController::affichage
+#Tableau routage exo addition
+app_addition:
+  path: /addition/{a}/{b}
+  controller: App\Controller\AccueilController::addition
