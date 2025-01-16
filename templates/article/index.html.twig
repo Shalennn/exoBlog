@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+    <h1>Liste des articles</h1>
+    {% for article in articles %}
+    <div class="card bg-base-100 w-96 shadow-xl">
+        <figure>
+            <img src="https://db.pokemongohub.net/_next/image?url=%2Fimages%2Fofficial%2Ffull%2F039.webp&w=256&q=75" alt="Shoes" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title">{{article.title}}</h2>
+            <p>{{article.content|split('.')|first}}</p>
+            <div class="card-actions justify-end">
+<a href="{{ path('app_article_bis', {'id': article.id}) }}" class="btn btn-primary">Buy Now</a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %}

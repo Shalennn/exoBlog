@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ArticleController!{% endblock %}
+
+{% block body %}
+{% if article.id is defined %}
+<div class="card glass w-96">
+    <a href="{{path ('app_article')}}"><button class="btn btn-primary">Retour</button></a>
+    <figure>
+        <img src="https://db.pokemongohub.net/_next/image?url=%2Fimages%2Fofficial%2Ffull%2F039.webp&w=256&q=75" alt="car!" />
+    </figure>
+    <div class="card-body">
+        <h2 class="card-title">{{article.title}}</h2>
+        <p>Nom : {{article.user.lastname}} & Prenom : {{article.user.firstname}}</p>
+        <p>Date de création : {{article.createAt|date("m/d/Y")}}</p>
+        <p>{{article.content}}</p>
+        <h3>Catégories de l'article :</h3>
+        {% for categori in article.categories %}
+            <p>{{categori.libele}}</p>
+        {% endfor %}
+        {% set compteur = 1 %}
+        {% for arti in article.commentaries %}
+            <p>Commentaire {{compteur}}: {{arti.content}}</p>
+            {% set compteur = compteur + 1 %}
+        {% endfor %}
+    </div>
+</div>  
+    {% endif %}
+{% endblock %}

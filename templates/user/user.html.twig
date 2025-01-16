@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrement{% endblock %}
+
+{% block body %}
+<turbo-frame id="the_frame_id">
+    {{form_start(formulaire)}}
+    {{form_rest(formulaire)}}
+    {{form_end(formulaire)}}
+{% include "compostant/_toast.html.twig" %}
+</turbo-frame>
+{% endblock %}

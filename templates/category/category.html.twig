@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories{% endblock %}
+
+{% block body %}
+    <h1>La categori</h1>
+    {% if category.id is defined %}
+        <p>{{category.id}}</p>
+        <p>{{category.libele}}</p>
+        {% else %}
+        <p>La catégorie n'existe pas</p>
+    {% endif %}
+{% endblock %}

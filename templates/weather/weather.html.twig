@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Meteo{% endblock %}
+{% block body %}
+    <h1>Temps a : {{ ville }}</h1>
+    <p>Temperature: {{ temperature }} °C</p>
+    <p>Pays : {{ pays }}</p>
+    
+    {% if icon %}
+    <p>Petite image de meteo :</p>
+    <img src="https://openweathermap.org/img/wn/{{ icon }}@2x.png" alt="Weather Icon">
+    {% else %}
+    <p>PAs d'icone =c</p>
+    {% endif %}
+{% endblock %}

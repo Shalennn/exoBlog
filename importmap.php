@@ -25,4 +25,54 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
+    'preline' => [
+        'version' => '2.7.0',
+    ],
+    'daisyui' => [
+        'version' => '4.12.23',
+    ],
+    'postcss-js' => [
+        'version' => '4.0.1',
+    ],
+    'picocolors' => [
+        'version' => '1.1.1',
+    ],
+    'css-selector-tokenizer' => [
+        'version' => '0.8.0',
+    ],
+    'culori/require' => [
+        'version' => '3.3.0',
+    ],
+    'daisyui/dist/full.min.css' => [
+        'version' => '4.12.23',
+        'type' => 'css',
+    ],
+    'camelcase-css' => [
+        'version' => '2.0.1',
+    ],
+    'postcss' => [
+        'version' => '8.4.33',
+    ],
+    'fastparse' => [
+        'version' => '1.1.2',
+    ],
+    'cssesc' => [
+        'version' => '3.0.0',
+    ],
+    'nanoid/non-secure' => [
+        'version' => '3.3.7',
+    ],
+    'flowbite' => [
+        'version' => '2.5.2',
+    ],
+    '@popperjs/core' => [
+        'version' => '2.11.8',
+    ],
+    'flowbite-datepicker' => [
+        'version' => '1.3.0',
+    ],
+    'flowbite/dist/flowbite.min.css' => [
+        'version' => '2.5.2',
+        'type' => 'css',
+    ],
 ];

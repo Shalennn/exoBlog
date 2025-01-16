@@ -20,10 +20,10 @@ class Commentary
     private ?\DateTimeImmutable $createAt = null;
 
     #[ORM\ManyToOne]
-    private ?Article $article = null;
-
-    #[ORM\ManyToOne]
     private ?User $user = null;
+
+    #[ORM\ManyToOne(inversedBy: 'commentaries')]
+    private ?Article $article = null;
 
     public function getId(): ?int
     {
@@ -54,18 +54,6 @@ class Commentary
         return $this;
     }
 
-    public function getArticle(): ?Article
-    {
-        return $this->article;
-    }
-
-    public function setArticle(?Article $article): static
-    {
-        $this->article = $article;
-
-        return $this;
-    }
-
     public function getUser(): ?User
     {
         return $this->user;
@@ -74,6 +62,18 @@ class Commentary
     public function setUser(?User $user): static
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?Article $article): static
+    {
+        $this->article = $article;
 
         return $this;
     }
