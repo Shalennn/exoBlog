@@ -23,7 +23,10 @@ class CommentaryCrudController extends AbstractCrudController
     {
         return [
             IdField::new('id','Identifiant'),
-            TextField::new('libele','Titre'),
+            TextareaField::new('content','Contenue')->hideOnIndex(),
+            DateTimeField::new('createAt','Date de creation'),
+            TextField::new('user','Utilisateur'),
+            //AssociationField::new('category'),
         ];
     }
     
